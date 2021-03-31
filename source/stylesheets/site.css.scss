@@ -1,7 +1,11 @@
+@import "config/font_settings";
+@import "components/card";
+@import "components/tag";
+
 body {
   background-color: white;
   color: black;
-  font-family: "Helvetica Neue", "Helvetica", "Fira Sans",
+  font-family: "Founders Grotesk", "Helvetica Neue", "Helvetica", "Fira Sans",
     "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
   padding: 1rem;
@@ -16,23 +20,20 @@ a {
   }
 }
 
-.wrapper {
-  h1 {
-    font-size: 16vw;
-    width: 100%;
-    font-weight: 400;
-    margin-top: -0.5rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1.5rem;
-    line-height: 1.3em;
+.presentation {
+  h4 {
+    margin-bottom: 0;
   }
 }
 
+.intro {
+  margin-top: 14px;
+}
+
 hr {
-opacity: 1;
+  opacity: 1;
+}
+
+.subtitle {
+  margin-top: 48px;
 }
