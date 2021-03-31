@@ -2,7 +2,7 @@
 title: Miebi
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" class="middleman-logo" aria-labelledby="middleman-logo__title" role="img">
+<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" class="middleman-logo" aria-labelledby="middleman-logo__title" role="img">
   <title id="middleman-logo__title">Middleman</title>
   <path class="middleman-logo__top-left-bar" fill-opacity=".45" d="M0 40L200 0v30L0 60z"/>
   <path class="middleman-logo__top-right-bar" fill="#fff" d="M200 0l200 40v20L200 30z"/>
@@ -10,16 +10,36 @@ title: Miebi
   <path class="middleman-logo__right-m" fill="#fff" d="M400 78v184l-45 5V152l-45 83-47-83v129l-53 7V52l57 8 43 83 43-70z"/>
   <path class="middleman-logo__bottom-left-bar" fill-opacity=".45" d="M0 300l200 40v-30L0 280z"/>
   <path class="middleman-logo__bottom-right-bar" fill="#fff" d="M200 340l200-40v-20l-200 30z"/>
-</svg>
+</svg> -->
 
-<h1>
-  Hello
-</h1>
+<% projects = [
+  { title: "Curators"},
+  { title: "Dreamscape"},
+  { title: "Facebook Gaming"}
+  ] %>
 
-<%= link_to 'About', '/about' %>
+<div class="wrapper wrapper-index">
+  <h1>Hi, I'm Miebi</h1>
 
-<%= link_to(
-  "Read Documentation",
-  "https://middlemanapp.com/basics/templating_language/",
-  target: "_blank"
-) %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h3>Web Developer and Digital Designer</h3>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <p>I'm an arts and culture enthusiast, especially when it comes to new technologies and immersive experiences. After working as a graphic designer in New York, I joined Le Wagon coding bootcamp to become a web developer and extend my skills in the digital field. </p>
+      <p>Say hi: hi@miebi.space</p>
+      <p>@utilisateur387 | GitHub | LinkedIn</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <% projects.each do |project| %>
+    <div class="card-project">
+      <h2><%=  project[:title] %></h2>
+      <div style="width:100%; height:600px; background: black"></div>
+    </div>
+  <% end %>
+</div>
+
+<!-- <%= link_to 'About', '/about' %> -->
