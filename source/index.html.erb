@@ -18,6 +18,8 @@ title: Miebi
   { title: "Facebook Gaming"}
   ] %>
 
+
+
 <div class="wrapper wrapper-index">
   <div class="row presentation">
     <div class="col-xs-12 col-lg-6">
@@ -41,22 +43,21 @@ title: Miebi
 
 
   <h4 class="subtitle">Latest projects</h4>
-  <!-- <hr> -->
 
-  <% projects.each do |project| %>
+  <% data.projects.list.each do |project| %>
     <hr>
     <div class="card-project">
       <div class="row">
         <div class="col-xs-12 col-md-6">
-          <h2><%=  project[:title] %></h2>
+          <h2><%=  project.title %></h2>
         </div>
 
         <div class="col-xs-12 col-md-6">
-          <p>Elit nibh malesuada scelerisque leo arcu, ut turpis nunc varius. Non feugiat malesuada venenatis in at netus tincidunt. Aliquet tempus nisl.</p>
+          <p><%= project.description %></p>
         </div>
-        <% if project[:tags] %>
+        <% if project.tags %>
           <p>
-            <% project[:tags].each do |tag| %>
+            <% project.tags.each do |tag| %>
               <span class="tags"><%= tag %></span>
             <% end %>
           </p>
