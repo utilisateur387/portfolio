@@ -12,8 +12,7 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <div class="wrapper-body">
-      <%= yield %>
-    </div>
+    <%= image_tag current_page.data.cover_image, class: "cover-image", alt: "alttext" %>
+    <%= yield %>
   </body>
 </html>
