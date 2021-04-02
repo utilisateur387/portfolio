@@ -12,7 +12,23 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <%= image_tag current_page.data.cover_image, class: "cover-image", alt: "alttext" %>
-    <%= yield %>
+
+    <div class="wrapper-body">
+      <%= image_tag current_page.data.cover_image, class: "cover-image", alt: "alttext" %>
+      <% project = data.projects.list.select{|project| project["title"] == current_page.data.title} %>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h1><%= current_page.data.title %></h1>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="full_description"><%= project.first.full_description %></p>
+        </div>
+      </div>
+      <% project.first.tags.each do |tag| %>
+        <span class="tags"><%= tag %></span>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
