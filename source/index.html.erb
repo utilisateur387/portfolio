@@ -27,43 +27,96 @@ title: Miebi
     </div>
   </div>
 
-  <%= link_to 'My Form', '/', :query => 'test', :fragment => 'deep' %>
-    <% rack.values.each do |entry| %>
-      <%= entry.query_string %>
-    <% end %>
-
 
   <h4 class="subtitle">Latest projects</h4>
 
-  <% data.projects.list.each do |project| %>
-    <hr>
-    <div class="card-project">
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <h2><%=  project.title %></h2>
+
+  <% if rack.values.first.query_string != "" %>
+    <% filtered_projects = data.projects.list.select do |project| %>
+      <% project.tags.include?(rack.values.first.query_string) %>
+    <% end %>
+
+    <% filtered_projects.each do |project| %>
+
+      <hr>
+
+      <div class="card-project">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <h2><%=  project.title %></h2>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <p><%= project.short_description %></p>
+          </div>
+
+          <% if project.tags %>
+            <p>
+              <% project.tags.each do |tag| %>
+                <span class="tags">
+                  <% link_to '/', :query => tag do %>
+                    <%= tag %>
+                  <% end %>
+                </span>
+              <% end %>
+            </p>
+          <% end %>
         </div>
 
-        <div class="col-xs-12 col-md-6">
-          <p><%= project.short_description %></p>
-        </div>
-        <% if project.tags %>
-          <p>
-            <% project.tags.each do |tag| %>
-              <span class="tags"><%= tag %></span>
-            <% end %>
-          </p>
+        <% if project.title.include?(" ") %>
+          <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
+          <% link_to "projects/#{title}" do %>
+            <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
+          <% end %>
+        <% else %>
+          <% link_to "projects/#{project.title.downcase}" do %>
+            <%= image_tag "#{project.title.downcase}/cover_image.png", alt: "alttext" %>
+          <% end %>
         <% end %>
       </div>
-      <% if project.title.include?(" ") %>
-        <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
-        <% link_to "projects/#{title}" do %>
-          <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
+    <% end %>
+
+  <% else %>
+
+    <% data.projects.list.each do |project| %>
+
+      <hr>
+
+      <div class="card-project">
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <h2><%= project.title %></h2>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <p><%= project.short_description %></p>
+          </div>
+
+          <% if project.tags %>
+            <p>
+              <% project.tags.each do |tag| %>
+                <span class="tags">
+                  <% link_to '/', :query => tag do %>
+                    <%= tag %>
+                  <% end %>
+                </span>
+              <% end %>
+            </p>
+          <% end %>
+        </div>
+
+        <% if project.title.include?(" ") %>
+          <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
+          <% link_to "projects/#{title}" do %>
+            <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
+          <% end %>
+        <% else %>
+          <% link_to "projects/#{project.title.downcase}" do %>
+            <%= image_tag "#{project.title.downcase}/cover_image.png", alt: "alttext" %>
+          <% end %>
         <% end %>
-      <% else %>
-        <% link_to "projects/#{project.title.downcase}" do %>
-          <%= image_tag "#{project.title.downcase}/cover_image.png", alt: "alttext" %>
-        <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
+
 </div>
