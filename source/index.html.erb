@@ -1,6 +1,8 @@
 ---
 title: Miebi
 ---
+
+<!-- FILTERS BAR -->
 <div class="filters" id="filters">
   <% tags = [] %>
   <% data.projects.list.each do |project| %>
@@ -8,12 +10,36 @@ title: Miebi
   <% end %>
 
   <span class="me-2">Filter by</span>
-  <span class="tags">View All</span>
-  <% tags.each do |tag| %>
-    <span class="tags"><%= tag %></span>
+
+  <% if rack.values.first.query_string == "" %>
+    <% link_to '/#projects' do %>
+      <span class="tags active-tag">View All</span>
+    <% end %>
+    <% tags.each do |tag| %>
+      <% link_to '/#projects', query: tag do %>
+        <span class="tags"><%= tag %></span>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% link_to '/#projects' do %>
+      <span class="tags">View All</span>
+    <% end %>
+    <% current_tag = tags.select { |tag| tag == rack.values.first.query_string }.first %>
+    <% link_to '#projects' do %>
+      <span class="tags active-tag"><%= current_tag %></span>
+    <% end %>
+    <% tags.each do |tag| %>
+      <% if tag != current_tag %>
+        <% link_to '/#projects', query: tag do %>
+          <span class="tags"><%= tag %></span>
+        <% end %>
+      <% end %>
+    <% end %>
   <% end %>
 </div>
 
+
+<!-- MAIN BODY CONTENT -->
 <div class="wrapper wrapper-index">
   <div class="row presentation">
     <div class="col-xs-12 col-lg-6">
@@ -40,7 +66,7 @@ title: Miebi
   </div>
 
 
-  <h4 class="subtitle">Latest projects</h4>
+  <h4 class="subtitle" id="projects">Latest projects</h4>
 
 
   <% if rack.values.first.query_string != "" %>
@@ -65,11 +91,11 @@ title: Miebi
           <% if project.tags %>
             <p>
               <% project.tags.each do |tag| %>
-                <span class="tags">
-                  <% link_to '/', :query => tag do %>
+                <% link_to '/', :query => tag do %>
+                  <span class="tags">
                     <%= tag %>
-                  <% end %>
-                </span>
+                  </span>
+                <% end %>
               <% end %>
             </p>
           <% end %>
@@ -107,11 +133,11 @@ title: Miebi
           <% if project.tags %>
             <p>
               <% project.tags.each do |tag| %>
-                <span class="tags">
-                  <% link_to '/', :query => tag do %>
+                <% link_to '/', :query => tag do %>
+                  <span class="tags">
                     <%= tag %>
-                  <% end %>
-                </span>
+                  </span>
+                <% end %>
               <% end %>
             </p>
           <% end %>

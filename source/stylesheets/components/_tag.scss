@@ -5,19 +5,32 @@
   font-family: 'Frank Ruhl Libre';
   font-size: 16px;
   text-transform: uppercase;
-  transition: background 300ms;
+  transition: font-style 300ms;
   cursor: pointer;
   margin-right: 4px;
-
-  a {
-    font-style: normal;
-  }
+  font-style: normal;
 
   a:hover {
     color: inherit;
   }
+}
 
-  &:hover {
-    background: $ternary;
+.filters {
+  .tags {
+    opacity: 0.4;
+    transition: opacity 200ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .active-tag {
+    opacity: 1;
+    font-style: italic;
+  }
+
+  a:hover {
+    color: inherit;
   }
 }
