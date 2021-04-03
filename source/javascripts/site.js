@@ -17,7 +17,7 @@ const revealFilters = () => {
     if (window.pageYOffset > 200) {
       filters.style.top = "0";
     } else {
-      filters.style.top = "-36px";
+      filters.style.top = "-40px";
     }
   }
 }

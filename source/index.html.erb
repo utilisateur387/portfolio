@@ -2,7 +2,16 @@
 title: Miebi
 ---
 <div class="filters" id="filters">
-  Filter by
+  <% tags = [] %>
+  <% data.projects.list.each do |project| %>
+    <% project.tags.each { |tag| tags << tag if tags.include?(tag) == false } %>
+  <% end %>
+
+  <span class="me-2">Filter by</span>
+  <span class="tags">View All</span>
+  <% tags.each do |tag| %>
+    <span class="tags"><%= tag %></span>
+  <% end %>
 </div>
 
 <div class="wrapper wrapper-index">
