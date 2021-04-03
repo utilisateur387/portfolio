@@ -26,6 +26,8 @@ body {
   align-items: center;
   text-transform: uppercase;
   transition: top 0.3s;
+  white-space: nowrap;
+  overflow-x: auto;
 
   .tags {
     // font-size: 16px;
@@ -33,7 +35,16 @@ body {
     padding: 1px 10px;
   }
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.filters::-webkit-scrollbar {
+  display: none;
+}
 
+/* Hide scrollbar for IE, Edge and Firefox */
+.filters {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 .wrapper-body {
   padding: 1rem;
 }
