@@ -12,8 +12,33 @@ body {
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
 }
 
+.filters {
+  position: fixed;
+  top: -36px;
+  left: 0;
+  background-color: $secondary;
+  width: 100vw;
+  height: 40px;
+  z-index: 100;
+  font-family: 'Frank Ruhl Libre';
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
 .wrapper-body {
   padding: 1rem;
+}
+
+.wrapper-index {
+  img {
+    transition: opacity ease 300ms;
+  }
+  img:hover {
+    opacity: 0.85;
+  }
 }
 
 a {
@@ -40,4 +65,9 @@ hr {
 img {
   width: 100%;
   border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
