@@ -39,9 +39,14 @@ title: Miebi
 
 </div>
 
-
 <!-- MAIN BODY CONTENT -->
-<div class="wrapper wrapper-index">
+
+<% if rack.values.first.query_string == "" %>
+  <div class="wrapper wrapper-index">
+<% else %>
+  <div class="wrapper wrapper-index p-top">
+<% end %>
+
   <div class="row presentation">
     <div class="col-xs-12 col-lg-6">
       <h1>Hi, I’m Miebi, web developer and digital designer</h1>
@@ -121,7 +126,7 @@ title: Miebi
 
       <hr>
 
-      <div class="card-project">
+      <div class="card-project" data-tags="<%= project.tags.join("/") %>" >
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <h2><%= project.title %></h2>

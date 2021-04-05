@@ -1,18 +1,19 @@
 
 const getParams = () => {
   const params = new URLSearchParams(window.location.search).toString().replace('=', '');
-  const mainContent = document.querySelector('.wrapper-index');
-  if (params != "") {
-    mainContent.style.paddingTop = '40px';
+  if (params == "") {
+    return false;
+  } else {
+    return true;
   }
 }
 
 const revealFilters = () => {
-  getParams();
-  const params = new URLSearchParams(window.location.search).toString().replace('=', '');
   window.onscroll = () => {
     const filters = document.getElementById('filters');
-    if (window.pageYOffset > 60 && params == "") {
+    if (window.pageYOffset > 60 && getParams() == false) {
+      filters.style.top = "0";
+    } else if (getParams()) {
       filters.style.top = "0";
     } else {
       filters.style.top = "-40px";

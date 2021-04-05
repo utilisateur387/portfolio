@@ -56,6 +56,12 @@ body {
   img:hover {
     opacity: 0.85;
   }
+
+  transition: 500ms;
+}
+
+.p-top {
+  margin-top: 40px;
 }
 
 a {
