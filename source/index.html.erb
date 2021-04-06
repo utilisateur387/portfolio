@@ -15,11 +15,13 @@ title: Miebi
     <% link_to '/#projects' do %>
       <span class="tags active-tag">View All</span>
     <% end %>
+
     <% tags.each do |tag| %>
       <% link_to '/#projects', query: tag do %>
         <span class="tags"><%= tag %></span>
       <% end %>
     <% end %>
+
   <% else %>
     <% link_to '/#projects' do %>
       <span class="tags">View All</span>
@@ -28,6 +30,7 @@ title: Miebi
     <% link_to '#projects' do %>
       <span class="tags active-tag"><%= current_tag %></span>
     <% end %>
+
     <% tags.each do |tag| %>
       <% if tag != current_tag %>
         <% link_to '/#projects', query: tag do %>
@@ -54,11 +57,13 @@ title: Miebi
 
     <div class="col-xs-12 col-lg-6">
       <p class="intro">I'm an arts and culture enthusiast, especially when it comes to new technologies and immersive experiences. After working as a graphic designer in New York, I joined Le Wagon coding bootcamp to become a web developer and extend my skills in the digital field. </p>
+
       <div class="row mt-4">
         <div class="col-6">
           <h4>Say hi</h4>
           <p>hi@miebi.space</p>
         </div>
+
         <div class="col-6">
           <h4>Find me online</h4>
           <p>
@@ -109,6 +114,7 @@ title: Miebi
 
         <% if project.title.include?(" ") %>
           <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
+
           <% link_to "projects/#{title}" do %>
             <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
           <% end %>
@@ -149,11 +155,14 @@ title: Miebi
           <% end %>
         </div>
 
+
         <% if project.title.include?(" ") %>
           <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
+
           <% link_to "projects/#{title}" do %>
             <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
           <% end %>
+
         <% else %>
           <% link_to "projects/#{project.title.downcase}" do %>
             <%= image_tag "#{project.title.downcase}/cover_image.png", alt: "alttext" %>
