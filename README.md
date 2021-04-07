@@ -1,3 +1,3 @@
 # Personal Portfolio website ⚡️
-#### 🔜 *Link available soon!*
+#### *Link available soon!*
 Coded with Ruby using Middleman
