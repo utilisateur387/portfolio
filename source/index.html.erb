@@ -90,7 +90,7 @@ title: Miebi
       <hr>
 
       <div class="card-project">
-        <div class="row">
+        <div class="row card-intro">
           <div class="col-xs-12 col-md-6">
             <h1><%=  project.title %></h1>
           </div>
@@ -98,19 +98,19 @@ title: Miebi
           <div class="col-xs-12 col-md-6">
             <p><%= project.short_description %></p>
           </div>
-
-          <% if project.tags %>
-            <p>
-              <% project.tags.each do |tag| %>
-                <% link_to '/', :query => tag do %>
-                  <span class="tags">
-                    <%= tag %>
-                  </span>
-                <% end %>
-              <% end %>
-            </p>
-          <% end %>
         </div>
+
+        <% if project.tags %>
+          <p>
+            <% project.tags.each do |tag| %>
+              <% link_to '/', :query => tag do %>
+                <span class="tags">
+                  <%= tag %>
+                </span>
+              <% end %>
+            <% end %>
+          </p>
+        <% end %>
 
         <% if project.title.include?(" ") %>
           <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
