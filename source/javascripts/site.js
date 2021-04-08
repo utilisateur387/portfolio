@@ -11,7 +11,7 @@ const getParams = () => {
 const revealFilters = () => {
   window.onscroll = () => {
     const filters = document.getElementById('filters');
-    if (window.pageYOffset > 60 && getParams() == false) {
+    if (window.pageYOffset > 30 && getParams() == false) {
       filters.style.top = "0";
     } else if (getParams()) {
       filters.style.top = "0";
@@ -36,7 +36,6 @@ const filterProjects = () => {
 
   tags.forEach((tag) => {
     tag.addEventListener('click', (e) => {
-      // console.log(tag.innerText);
       tag.classList.add('active-tag');
       deactivateTag(tags, tag);
       projects.forEach((project) => {
