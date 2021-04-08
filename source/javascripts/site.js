@@ -21,15 +21,37 @@ const revealFilters = () => {
   }
 }
 
+const deactivateTag = (tags, currentTag) => {
+  tags.forEach((tag) => {
+    if (tag != currentTag) {
+      tag.classList.remove('active-tag');
+    }
+  })
+}
+
 const filterProjects = () => {
   const tags = document.querySelectorAll('.filter-tag');
-  console.log(tags);
+  const anchor = document.getElementById('latest-projects');
   const projects = document.querySelectorAll('.card-project');
-  // const projectList = {};
-  projects.forEach((project) => {
-    console.log(project.dataset.tags.split('/'));
-    // project.style.display = "none";
-  });
+
+  tags.forEach((tag) => {
+    tag.addEventListener('click', (e) => {
+      // console.log(tag.innerText);
+      tag.classList.add('active-tag');
+      deactivateTag(tags, tag);
+      projects.forEach((project) => {
+        console.log(tag.innerText);
+        if (project.dataset.tags.toUpperCase().split('/').includes(tag.innerText.toUpperCase())) {
+          project.style.display = 'block';
+        } else if (tag.innerText === "VIEW ALL") {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+      anchor.scrollIntoView();
+    })
+  })
 }
 
 window.onload = () => {
