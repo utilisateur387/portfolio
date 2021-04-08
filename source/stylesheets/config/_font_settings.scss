@@ -34,6 +34,52 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Alliance No.2';
+    src: url('AllianceNo2-LightItalic.woff2') format('woff2'),
+        url('AllianceNo2-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alliance No.2';
+    src: url('AllianceNo2-Light.woff2') format('woff2'),
+        url('AllianceNo2-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alliance No.2';
+    src: url('AllianceNo2-Medium.woff2') format('woff2'),
+        url('AllianceNo2-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alliance No.2';
+    src: url('AllianceNo2-RegularItalic.woff2') format('woff2'),
+        url('AllianceNo2-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alliance No.2';
+    src: url('AllianceNo2-Regular.woff2') format('woff2'),
+        url('AllianceNo2-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400&display=swap');
 
 // ____________________________________
