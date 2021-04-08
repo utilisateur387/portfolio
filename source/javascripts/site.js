@@ -21,6 +21,18 @@ const revealFilters = () => {
   }
 }
 
+const filterProjects = () => {
+  const tags = document.querySelectorAll('.filter-tag');
+  console.log(tags);
+  const projects = document.querySelectorAll('.card-project');
+  // const projectList = {};
+  projects.forEach((project) => {
+    console.log(project.dataset.tags.split('/'));
+    // project.style.display = "none";
+  });
+}
+
 window.onload = () => {
   revealFilters();
+  filterProjects();
 }
