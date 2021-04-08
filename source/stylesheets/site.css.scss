@@ -12,6 +12,14 @@ body {
     "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
 }
 
+.presentation h4 {
+  margin-bottom: 0.2em;
+}
+
+.headline > h1 {
+  max-width: 800px;
+}
+
 .filters {
   position: fixed;
   top: -40px;
@@ -74,10 +82,6 @@ a {
   &:hover {
     color: rgba(#000, 0.5);
   }
-}
-
-.intro {
-  margin-top: 14px;
 }
 
 hr {
