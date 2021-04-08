@@ -11,44 +11,18 @@ title: Miebi
 
   <span class="me-2">Filter by</span>
 
-  <% if rack.values.first.query_string == "" %>
-    <% link_to '/#projects' do %>
-      <span class="tags active-tag">View All</span>
-    <% end %>
+  <span class="tags">View All</span>
 
-    <% tags.each do |tag| %>
-      <% link_to '/#projects', query: tag do %>
-        <span class="tags"><%= tag %></span>
-      <% end %>
-    <% end %>
-
-  <% else %>
-    <% link_to '/#projects' do %>
-      <span class="tags">View All</span>
-    <% end %>
-    <% current_tag = tags.select { |tag| tag == rack.values.first.query_string }.first %>
-    <% link_to '#projects' do %>
-      <span class="tags active-tag"><%= current_tag %></span>
-    <% end %>
-
-    <% tags.each do |tag| %>
-      <% if tag != current_tag %>
-        <% link_to '/#projects', query: tag do %>
-          <span class="tags"><%= tag %></span>
-        <% end %>
-      <% end %>
-    <% end %>
+  <% tags.each do |tag| %>
+    <span class="tags"><%= tag %></span>
   <% end %>
 
 </div>
 
 <!-- MAIN BODY CONTENT -->
 
-<% if rack.values.first.query_string == "" %>
-  <div class="wrapper wrapper-index">
-<% else %>
+
   <div class="wrapper wrapper-index p-top">
-<% end %>
 
   <div class="row presentation">
     <div class="col-xs-12 col-lg-6 headline">
