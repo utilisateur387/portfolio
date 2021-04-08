@@ -8,6 +8,10 @@ body {
   background-color: white;
   color: black;
   font-family: "Alliance No.2", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 .presentation h4 {
@@ -61,6 +65,15 @@ hr {
 img {
   width: 100%;
   border-radius: 6px;
+}
+
+footer {
+  background: $secondary;
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 32px;
 }
 
 footer p {
