@@ -1,5 +1,5 @@
-@import "config/colors";
 @import "config/font_settings";
+@import "config/colors";
 @import "components/card";
 @import "components/tag";
 @import "pages/projects";
@@ -7,9 +7,7 @@
 body {
   background-color: white;
   color: black;
-  font-family: "Alliance No.2", "Helvetica Neue", "Helvetica", "Fira Sans",
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
-    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-family: "Alliance No.2", sans-serif;
 }
 
 .presentation h4 {
