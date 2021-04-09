@@ -1,7 +1,11 @@
 @font-face {
     font-family: 'Alliance No.2';
-    src: url('AllianceNo2-LightItalic.woff2') format('woff2'),
-        url('AllianceNo2-LightItalic.woff') format('woff');
+    src: url('../../fonts/AllianceNo2-LightItalic.eot');
+    src: url('../../fonts/AllianceNo2-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/AllianceNo2-LightItalic.woff2') format('woff2'),
+        url('../../fonts/AllianceNo2-LightItalic.woff') format('woff'),
+        url('../../fonts/AllianceNo2-LightItalic.ttf') format('truetype'),
+        url('../../fonts/AllianceNo2-LightItalic.svg#AllianceNo.2-LightItalic') format('svg');
     font-weight: 300;
     font-style: italic;
     font-display: swap;
@@ -9,12 +13,43 @@
 
 @font-face {
     font-family: 'Alliance No.2';
-    src: url('AllianceNo2-Light.woff2') format('woff2'),
-        url('AllianceNo2-Light.woff') format('woff');
+    src: url('../../fonts/AllianceNo2-Light.eot');
+    src: url('../../fonts/AllianceNo2-Light.eot?#iefix') format('embedded-opentype'),
+        url('../../fonts/AllianceNo2-Light.woff2') format('woff2'),
+        url('../../fonts/AllianceNo2-Light.woff') format('woff'),
+        url('../../fonts/AllianceNo2-Light.ttf') format('truetype'),
+        url('../../fonts/AllianceNo2-Light.svg#AllianceNo.2-Light') format('svg');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
+
+// @font-face {
+//     font-family: 'Alliance No.2';
+//     src: url('AllianceNo2-RegularItalic.eot');
+//     src: url('AllianceNo2-RegularItalic.eot?#iefix') format('embedded-opentype'),
+//         url('AllianceNo2-RegularItalic.woff2') format('woff2'),
+//         url('AllianceNo2-RegularItalic.woff') format('woff'),
+//         url('AllianceNo2-RegularItalic.ttf') format('truetype'),
+//         url('AllianceNo2-RegularItalic.svg#AllianceNo.2-RegularItalic') format('svg');
+//     font-weight: normal;
+//     font-style: italic;
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: 'Alliance No.2';
+//     src: url('AllianceNo2-Regular.eot');
+//     src: url('AllianceNo2-Regular.eot?#iefix') format('embedded-opentype'),
+//         url('AllianceNo2-Regular.woff2') format('woff2'),
+//         url('AllianceNo2-Regular.woff') format('woff'),
+//         url('AllianceNo2-Regular.ttf') format('truetype'),
+//         url('AllianceNo2-Regular.svg#AllianceNo.2-Regular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
 
 // @font-face {
 //     font-family: 'Alliance No.2';
