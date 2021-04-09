@@ -15,6 +15,10 @@
   }
 }
 
+p.tags {
+  margin-bottom: 0;
+}
+
 .filters {
   position: fixed;
   top: -40px;
@@ -62,4 +66,8 @@
 .filters {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+.count {
+  display: none;
 }

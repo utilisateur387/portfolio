@@ -7,6 +7,9 @@
 //   }
 // }
 
+// import { smoothscroll } from 'smoothscroll-polyfill';
+// smoothscroll.polyfill();
+
 const revealFilters = () => {
   window.onscroll = () => {
     const filters = document.getElementById('filters');
@@ -22,6 +25,9 @@ const deactivateTag = (tags, currentTag) => {
   tags.forEach((tag) => {
     if (tag != currentTag) {
       tag.classList.remove('active-tag');
+      const countToRemove = tag.querySelector('.count');
+      console.log(countToRemove);
+      countToRemove.style.display = "none";
     }
   })
 }
@@ -32,12 +38,16 @@ const filterProjects = () => {
   const projects = document.querySelectorAll('.card-project');
 
   tags.forEach((tag) => {
+    const tagName = tag.querySelector('.tag-name');
+    const count = tag.querySelector('.count');
+
     tag.addEventListener('click', (e) => {
       tag.classList.add('active-tag');
+      count.style.display = "inline";
+
       deactivateTag(tags, tag);
       projects.forEach((project) => {
-        // console.log(tag.innerText);
-        if (project.dataset.tags.toUpperCase().split('/').includes(tag.innerText.toUpperCase())) {
+        if (project.dataset.tags.toUpperCase().split('/').includes(tagName.innerText.toUpperCase())) {
           project.style.display = 'block';
         } else if (tag.innerText === "VIEW ALL") {
           project.style.display = 'block';
@@ -45,12 +55,23 @@ const filterProjects = () => {
           project.style.display = 'none';
         }
       });
-      anchor.scrollIntoView();
+      anchor.scrollIntoView({behavior: 'smooth'});
     })
   })
 }
 
+// const pageTransition = () => {
+//   const projectCovers = document.querySelectorAll('.img-card');
+//   projectCovers.forEach((project) => {
+//     project.addEventListener('click', (e) => {
+//       e.preventDefault();
+//       project.scrollIntoView({behavior: 'smooth'})
+//     })
+//   })
+// }
+
 window.onload = () => {
   revealFilters();
   filterProjects();
+  // pageTransition();
 }

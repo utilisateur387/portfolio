@@ -11,18 +11,24 @@ title: Miebi
 
   <span class="me-2">Filter by</span>
 
-  <span class="tags filter-tag active-tag">View All</span>
+<!--   <span class="tags filter-tag active-tag">View All</span>
+ -->
+ <p class="tags filter-tag active-tag">
+   <span class="tag-name">View All</span>
+   <span class="count"><%= tags.count %></span>
+  </p>
 
   <% tags.each do |tag| %>
-    <span class="tags filter-tag"><%= tag %></span>
+    <p class="tags filter-tag">
+     <span class="tag-name"><%= tag %></span>
+     <span class="count"><%= tags.count %></span>
+    </p>
   <% end %>
 
 </div>
 
 <!-- MAIN BODY CONTENT -->
-
-
-  <div class="wrapper wrapper-index">
+<div class="wrapper wrapper-index">
 
   <div class="row presentation">
     <div class="col-xs-12 col-lg-6 headline">
@@ -50,9 +56,9 @@ title: Miebi
     </div>
   </div>
 
-
   <h4 class="subtitle" id="latest-projects">Latest projects</h4>
 
+  <!-- PROJECT CARDS -->
   <% data.projects.list.each do |project| %>
 
     <div class="card-project" data-tags="<%= project.tags.join("/") %>" >
@@ -77,16 +83,16 @@ title: Miebi
         <% end %>
       </div>
 
-
+      <!-- CARD IMAGE -->
       <% if project.title.include?(" ") %>
         <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
 
-        <% link_to "projects/#{title}" do %>
+        <% link_to "projects/#{title}", class: "img-card" do %>
           <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
         <% end %>
 
       <% else %>
-        <% link_to "projects/#{project.title.downcase}" do %>
+        <% link_to "projects/#{project.title.downcase}", class: "img-card" do %>
           <%= image_tag "#{project.title.downcase}/cover_image.png", alt: "alttext" %>
         <% end %>
       <% end %>
