@@ -82,17 +82,17 @@ footer p {
   font-size: 16px;
 }
 
-.white-refresh {
+.fade {
   // position: fixed;
   // background: white;
   // width: 100%;
   // height: 100%;
 
-  -webkit-animation: animateThisRefresh 1s;
+  -webkit-animation: animateThisFade .8s;
   -webkit-animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes animateThisRefresh {
-  0% { opacity: 0 ;}
+@-webkit-keyframes animateThisFade {
+  0% { opacity: 0.4 ;}
   100% { opacity: 1; visibility: hidden; }
 }

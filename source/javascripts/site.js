@@ -56,9 +56,9 @@ const filterProjects = () => {
           project.style.display = 'none';
         }
 
-        projectImage.classList.add('white-refresh');
+        projectImage.classList.add('fade');
         projectImage.addEventListener('animationend', () => {
-          projectImage.classList.remove('white-refresh');
+          projectImage.classList.remove('fade');
         });
       });
 
