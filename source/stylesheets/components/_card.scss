@@ -17,6 +17,7 @@
 .container-img {
   text-align: center;
   overflow: hidden;
+  opacity: 0;
 
   img {
     transition: ease 400ms;

@@ -72,11 +72,16 @@ footer p {
   font-size: 16px;
 }
 
-.fade {
+.fade-in {
   -webkit-animation: animateThisFade 900ms;
-  // -webkit-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 }
 
+.reveal {
+  opacity: 1;
+  transition: 1s;
+  transition-delay: 250ms;
+}
 @-webkit-keyframes animateThisFade {
   0% { opacity: 1; border-left: solid 15px white; border-right: solid 15px white; }
   100% { opacity: 1; border-left: solid 0px white; border-right: solid 0px white; }

@@ -43,7 +43,7 @@ const filterProjects = () => {
           project.style.display = 'none';
         }
 
-        projectImage.classList.add('fade');
+        projectImage.classList.add('fade-in');
         projectImage.addEventListener('animationend', () => {
           projectImage.classList.remove('fade');
         });
@@ -61,18 +61,44 @@ const filterProjects = () => {
   })
 }
 
-// const pageTransition = () => {
-//   const projectCovers = document.querySelectorAll('.img-card');
-//   projectCovers.forEach((project) => {
-//     project.addEventListener('click', (e) => {
-//       e.preventDefault();
-//       project.scrollIntoView({behavior: 'smooth'})
-//     })
-//   })
+const fade = () => {
+  const elements = document.querySelectorAll('.container-img');
+  const windowHeight = window.innerHeight;
+
+  function checkPosition() {
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      const positionFromTop = elements[i].getBoundingClientRect().top;
+
+      if (positionFromTop - windowHeight <= 0) {
+        element.classList.add('reveal');
+        // element.classList.remove('hidden');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', checkPosition);
+  // window.addEventListener('resize', init);
+
+  checkPosition();
+};
+
+// const fade = () => {
+//   const box = document.querySelector('.container-img');
+//   const rect = box.getBoundingClientRect();
+//   console.log(rect);
+
+//   const isInViewport = rect.top >= 0 &&
+//         rect.left >= 0 &&
+//         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//         rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+
+//   console.log(isInViewport);
 // }
 
 window.onload = () => {
+  // ScrollReveal().reveal('.container-img', { delay: 100 });
   revealFilters();
   filterProjects();
-  ScrollReveal().reveal('.container-img', { delay: 100 });
+  fade();
 }
