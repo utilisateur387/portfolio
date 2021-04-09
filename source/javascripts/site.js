@@ -1,15 +1,3 @@
-// const getParams = () => {
-//   const params = new URLSearchParams(window.location.search).toString().replace('=', '');
-//   if (params == "") {
-//     return false;
-//   } else {
-//     return true;
-//   }
-// }
-
-// import { smoothscroll } from 'smoothscroll-polyfill';
-// smoothscroll.polyfill();
-
 const revealFilters = () => {
   window.onscroll = () => {
     const filters = document.getElementById('filters');
@@ -35,7 +23,6 @@ const filterProjects = () => {
   const tags = document.querySelectorAll('.filter-tag');
   const anchor = document.getElementById('latest-projects');
   const projects = document.querySelectorAll('.card-project');
-  // const whiteRefresh = document.getElementById('white-refresh');
 
   tags.forEach((tag) => {
     const tagName = tag.querySelector('.tag-name');
@@ -87,5 +74,5 @@ const filterProjects = () => {
 window.onload = () => {
   revealFilters();
   filterProjects();
-  // pageTransition();
+  ScrollReveal().reveal('.container-img', { delay: 100 });
 }
