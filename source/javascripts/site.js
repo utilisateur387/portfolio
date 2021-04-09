@@ -45,7 +45,7 @@ const filterProjects = () => {
       let count = 0;
 
       projects.forEach((project) => {
-        const projectImage = project.querySelector('img');
+        const projectImage = project.querySelector('.container-img');
         if (project.dataset.tags.toUpperCase().split('/').includes(tagName.innerText.toUpperCase())) {
           count += 1;
           project.style.display = 'block';
