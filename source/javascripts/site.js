@@ -26,7 +26,6 @@ const deactivateTag = (tags, currentTag) => {
     if (tag != currentTag) {
       tag.classList.remove('active-tag');
       const countToRemove = tag.querySelector('.count');
-      console.log(countToRemove);
       countToRemove.style.display = "none";
     }
   })
@@ -39,22 +38,28 @@ const filterProjects = () => {
 
   tags.forEach((tag) => {
     const tagName = tag.querySelector('.tag-name');
-    const count = tag.querySelector('.count');
+    const countElement = tag.querySelector('.count');
 
     tag.addEventListener('click', (e) => {
-      tag.classList.add('active-tag');
-      count.style.display = "inline";
+      let count = 0;
 
-      deactivateTag(tags, tag);
       projects.forEach((project) => {
         if (project.dataset.tags.toUpperCase().split('/').includes(tagName.innerText.toUpperCase())) {
+          count += 1;
           project.style.display = 'block';
-        } else if (tag.innerText === "VIEW ALL") {
+        } else if (tagName.innerText === "VIEW ALL") {
+          count = tags.length - 1;
           project.style.display = 'block';
         } else {
           project.style.display = 'none';
         }
       });
+
+      tag.classList.add('active-tag');
+      countElement.innerText = ` (${count})`;
+      countElement.style.display = "inline";
+      console.log(count);
+      deactivateTag(tags, tag);
       anchor.scrollIntoView({behavior: 'smooth'});
     })
   })
