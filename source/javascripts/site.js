@@ -83,7 +83,7 @@ const fade = () => {
 
 
 window.onload = () => {
-  revealFilters();
+  // revealFilters();
   filterProjects();
   fade();
 }

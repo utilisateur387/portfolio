@@ -21,7 +21,8 @@ p.tags {
 
 .filters {
   position: fixed;
-  top: -40px;
+  // top: -40px;
+  top: 0px;
   left: 0;
   background-color: $secondary;
   font-weight: lighter;
