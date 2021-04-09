@@ -45,6 +45,7 @@ const filterProjects = () => {
       let count = 0;
 
       projects.forEach((project) => {
+        const projectImage = project.querySelector('img');
         if (project.dataset.tags.toUpperCase().split('/').includes(tagName.innerText.toUpperCase())) {
           count += 1;
           project.style.display = 'block';
@@ -55,9 +56,9 @@ const filterProjects = () => {
           project.style.display = 'none';
         }
 
-        project.classList.add('white-refresh');
-        project.addEventListener('animationend', () => {
-          project.classList.remove('white-refresh');
+        projectImage.classList.add('white-refresh');
+        projectImage.addEventListener('animationend', () => {
+          projectImage.classList.remove('white-refresh');
         });
       });
 
