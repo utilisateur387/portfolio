@@ -36,7 +36,7 @@ const filterProjects = () => {
       tag.classList.add('active-tag');
       deactivateTag(tags, tag);
       projects.forEach((project) => {
-        console.log(tag.innerText);
+        // console.log(tag.innerText);
         if (project.dataset.tags.toUpperCase().split('/').includes(tag.innerText.toUpperCase())) {
           project.style.display = 'block';
         } else if (tag.innerText === "VIEW ALL") {
