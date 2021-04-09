@@ -35,6 +35,7 @@ const filterProjects = () => {
   const tags = document.querySelectorAll('.filter-tag');
   const anchor = document.getElementById('latest-projects');
   const projects = document.querySelectorAll('.card-project');
+  // const whiteRefresh = document.getElementById('white-refresh');
 
   tags.forEach((tag) => {
     const tagName = tag.querySelector('.tag-name');
@@ -53,14 +54,21 @@ const filterProjects = () => {
         } else {
           project.style.display = 'none';
         }
+
+        project.classList.add('white-refresh');
+        project.addEventListener('animationend', () => {
+          project.classList.remove('white-refresh');
+        });
       });
+
 
       tag.classList.add('active-tag');
       countElement.innerText = ` (${count})`;
       countElement.style.display = "inline";
-      console.log(count);
       deactivateTag(tags, tag);
       anchor.scrollIntoView({behavior: 'smooth'});
+
+
     })
   })
 }
