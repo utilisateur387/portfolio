@@ -7,3 +7,15 @@
     margin-bottom: 16px;
   }
 }
+
+.container-img {
+  text-align: center;
+  overflow: hidden;
+
+  img {
+    transition: ease 400ms;
+  }
+  img:hover {
+    transform: scale(1.025);
+  }
+}

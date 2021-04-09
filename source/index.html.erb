@@ -91,12 +91,16 @@ title: Miebi
         <% title = project.title.downcase.gsub(' ', '_').gsub('.', '') %>
 
         <% link_to "projects/#{title}", class: "img-card" do %>
-          <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
+          <div class="container-img">
+            <%= image_tag "#{title}/cover_image.png", alt: "alttext" %>
+          </div>
         <% end %>
 
       <% else %>
         <% link_to "projects/#{project.title.downcase}", class: "img-card" do %>
-          <%= image_tag "#{project.title.downcase}/cover_image.png", alt: "alttext" %>
+          <div class="container-img">
+            <%= image_tag "#{project.title.downcase}/cover_image.png", alt: "alttext" %>
+          </div>
         <% end %>
       <% end %>
     </div>

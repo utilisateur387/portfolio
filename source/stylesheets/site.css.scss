@@ -28,17 +28,6 @@ body {
   padding: 1rem;
 }
 
-.wrapper-index {
-  img {
-    transition: opacity ease 300ms;
-  }
-  img:hover {
-    opacity: 0.85;
-  }
-
-  transition: 500ms;
-}
-
 .p-top {
   margin-top: 40px;
 }
@@ -93,6 +82,6 @@ footer p {
 }
 
 @-webkit-keyframes animateThisFade {
-  0% { opacity: 0.4 ;}
-  100% { opacity: 1; visibility: hidden; }
+  0% { opacity: 1;  width: 95%; height: 100%; }
+  100% { opacity: 1; width: 100% }
 }
