@@ -38,7 +38,7 @@ body {
 }
 
 a {
-  color: black;
+  color: white;
   font-style: italic;
   text-decoration: none;
   transition: all 200ms;
@@ -89,6 +89,6 @@ footer p {
 }
 
 @-webkit-keyframes animateThisFade {
-  0% { opacity: 1; border-left: solid 15px white; border-right: solid 15px white; }
-  100% { opacity: 1; border-left: solid 0px white; border-right: solid 0px white; }
+  0% { opacity: 1; border-left: solid 15px black; border-right: solid 15px black; }
+  100% { opacity: 1; border-left: solid 0px black; border-right: solid 0px black; }
 }

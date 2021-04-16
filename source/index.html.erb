@@ -2,8 +2,6 @@
 title: Miebi
 ---
 
-<div id="white-refresh"></div>
-
 <!-- FILTERS BAR -->
 <div class="filters" id="filters">
   <% tags = [] %>
@@ -11,7 +9,7 @@ title: Miebi
     <% project.tags.each { |tag| tags << tag if tags.include?(tag) == false } %>
   <% end %>
 
-  <span class="me-2">Filter by</span>
+  <span class="me-2">Filter projects</span>
 
   <p class="tags filter-tag active-tag">
     <span class="tag-name">View All</span>
