@@ -1,7 +1,7 @@
 .tags {
   padding: 6px 12px;
   border-radius: 32px;
-  background: $secondary;
+  background: black;
   font-family: 'Alliance No.2';
   font-size: 16px;
   text-transform: uppercase;
@@ -20,16 +20,14 @@ p.tags {
 }
 
 .filters {
-  position: fixed;
-  // top: -40px;
+  position: sticky;
   top: 0px;
-  left: 0;
-  background-color: $secondary;
+  background-color: black;
   font-weight: lighter;
   width: 100vw;
-  height: 40px;
+  height: 46px;
   z-index: 100;
-  padding-left: 1rem;
+  padding-left: 1.75rem;
   display: flex;
   align-items: center;
   transition: top 0.3s;
@@ -40,7 +38,7 @@ p.tags {
     text-transform: uppercase;
     opacity: 0.4;
     transition: opacity 200ms;
-    border: solid 1px black;
+    border: solid 1px white;
     padding: 3px 10px;
 
     &:hover {
