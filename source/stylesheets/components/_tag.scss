@@ -21,15 +21,13 @@ p.tags {
 
 .filters {
   position: sticky;
-  // top: -40px;
   top: 0px;
-  left: -1rem;
   background-color: black;
   font-weight: lighter;
   width: 100vw;
-  height: 44px;
+  height: 46px;
   z-index: 100;
-  padding-left: 1rem;
+  padding-left: 1.75rem;
   display: flex;
   align-items: center;
   transition: top 0.3s;
