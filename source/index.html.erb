@@ -2,30 +2,9 @@
 title: Miebi
 ---
 
-<!-- FILTERS BAR -->
-<div class="filters" id="filters">
-  <% tags = [] %>
-  <% data.projects.list.each do |project| %>
-    <% project.tags.each { |tag| tags << tag if tags.include?(tag) == false } %>
-  <% end %>
-
-  <span class="me-2">Filter projects</span>
-
-  <p class="tags filter-tag active-tag">
-    <span class="tag-name">View All</span>
-    <span class="count"><%= tags.count %></span>
-  </p>
-
-  <% tags.each do |tag| %>
-    <p class="tags filter-tag">
-     <span class="tag-name"><%= tag %></span>
-     <span class="count"><%= tags.count %></span>
-    </p>
-  <% end %>
-</div>
 
 <!-- MAIN BODY CONTENT -->
-<div class="wrapper wrapper-index">
+<div class="wrapper-body wrapper">
 
   <div class="row presentation">
     <div class="col-xs-12 col-lg-6 headline">
@@ -52,8 +31,33 @@ title: Miebi
       </div>
     </div>
   </div>
+</div>
 
-  <h4 class="subtitle" id="latest-projects">Latest projects</h4>
+  <!-- FILTERS BAR -->
+  <div class="filters" id="filters">
+    <% tags = [] %>
+    <% data.projects.list.each do |project| %>
+      <% project.tags.each { |tag| tags << tag if tags.include?(tag) == false } %>
+    <% end %>
+
+    <span class="me-2">Filter projects</span>
+
+    <p class="tags filter-tag active-tag">
+      <span class="tag-name">View All</span>
+      <span class="count"><%= tags.count %></span>
+    </p>
+
+    <% tags.each do |tag| %>
+      <p class="tags filter-tag">
+       <span class="tag-name"><%= tag %></span>
+       <span class="count"><%= tags.count %></span>
+      </p>
+    <% end %>
+  </div>
+
+  <!-- <h4 class="subtitle" id="latest-projects">Latest projects</h4> -->
+
+<div class="wrapper-body wrapper">
 
   <!-- PROJECT CARDS -->
   <% data.projects.list.each do |project| %>
