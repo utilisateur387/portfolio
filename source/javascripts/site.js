@@ -49,13 +49,11 @@ const filterProjects = () => {
         });
       });
 
-
       tag.classList.add('active-tag');
       countElement.innerText = ` (${count})`;
       countElement.style.display = "inline";
       deactivateTag(tags, tag);
       anchor.scrollIntoView({behavior: 'smooth'});
-
 
     })
   })
@@ -77,7 +75,6 @@ const fade = () => {
   }
 
   window.addEventListener('scroll', checkPosition);
-
   checkPosition();
 };
 
