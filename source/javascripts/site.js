@@ -21,7 +21,7 @@ const deactivateTag = (tags, currentTag) => {
 
 const filterProjects = () => {
   const tags = document.querySelectorAll('.filter-tag');
-  const anchor = document.getElementById('latest-projects');
+  const anchor = document.getElementById('filters');
   const projects = document.querySelectorAll('.card-project');
 
   tags.forEach((tag) => {
