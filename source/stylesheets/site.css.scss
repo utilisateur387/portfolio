@@ -83,10 +83,10 @@ footer p {
 .reveal {
   opacity: 1;
   transition: 1s;
-  transition-delay: 250ms;
+  transition-delay: 450ms;
 }
 
 @-webkit-keyframes animateThisFade {
-  0% { opacity: 1; border-left: solid 15px black; border-right: solid 15px black; }
-  100% { opacity: 1; border-left: solid 0px black; border-right: solid 0px black; }
+  0% { opacity: 0;  }
+  100% { opacity: 1; }
 }
