@@ -34,13 +34,13 @@ title: Miebi
 </div>
 
 <!-- FILTERS BAR -->
+<!-- <span class="me-2">Filter projects</span> -->
 <div class="filters" id="filters">
   <% tags = [] %>
   <% data.projects.list.each do |project| %>
     <% project.tags.each { |tag| tags << tag if tags.include?(tag) == false } %>
   <% end %>
 
-  <span class="me-2">Filter projects</span>
 
   <p class="tags filter-tag active-tag">
     <span class="tag-name">View All</span>
